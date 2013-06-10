@@ -38,25 +38,6 @@ class Model {
 			echo 'Query failed: '.$e->getMessage();
 		}
 	}
-	
-	public function where($key,$val,$con)
-	{	
-		return array( "where" => " AND $key $con :$key","val" => $val );
-	}
-	
-	public function execute()
-	{
-		$where = ' 1 = 1 ';
-	}
-	public function join($string)
-	{	
-		try {
-			$result = $this->db->query($string);
-			return $result;
-		} catch (PDOException $e) {
-			echo 'Query failed: '.$e->getMessage();
-		}
-	}
 
 }
 
